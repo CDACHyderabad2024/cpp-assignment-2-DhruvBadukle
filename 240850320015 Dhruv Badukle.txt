@@ -1,0 +1,243 @@
+Assignment 2
+1. Write a program to check whether a number is prime or not. 
+
+    int n;
+    bool is_prime = true;
+    
+    cout<<"Ente a number : ";
+    cin >> n;
+    
+    if(n==0 || n==1){
+        is_prime = false;
+    }
+    
+    for(int i=2;i<=n/2;i++){
+        if(n%i==0){
+            is_prime = false;
+        }
+    }
+    if(is_prime){
+        cout << n << " is prime.";
+    }else{
+        cout << n << " is not prime.";
+    }
+
+    return 0;
+
+Output :
+
+Enter a number : 3
+3 is prime. 
+
+
+2. Write a program to generate first N prime numbers. Accept N from user. 
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Enter the number of prime numbers to generate: ";
+    cin >> N;
+
+    int count = 0;
+    int num = 2; 
+
+    while (count < N) {
+        bool isPrime = true;
+        if (num <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= sqrt(num); i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            cout << num << " ";
+            count++;
+        }
+        num++;
+    }
+    cout << endl;
+
+    return 0;
+}
+
+Output : 
+
+Enter the number of prime numbers to generate: 5
+2 3 5 7 11 
+
+3. Write a program to generate following pyramid
+A
+AB
+ABC
+..... A..............Z
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch = 'A';
+
+    for (int i = 0; i < 26; i++) {  
+        for (int j = 0; j <= i; j++) {  
+            cout << char('A' + j); 
+        }
+        cout << endl;  
+    }
+
+    return 0;
+}
+
+
+Output :
+
+
+A
+AB
+ABC
+ABCD
+ABCDE
+ABCDEF
+ABCDEFG
+ABCDEFGH
+ABCDEFGHI
+ABCDEFGHIJ
+ABCDEFGHIJK
+ABCDEFGHIJKL
+ABCDEFGHIJKLM
+ABCDEFGHIJKLMN
+ABCDEFGHIJKLMNO
+ABCDEFGHIJKLMNOP
+ABCDEFGHIJKLMNOPQ
+ABCDEFGHIJKLMNOPQR
+ABCDEFGHIJKLMNOPQRS
+ABCDEFGHIJKLMNOPQRST
+ABCDEFGHIJKLMNOPQRSTU
+ABCDEFGHIJKLMNOPQRSTUV
+ABCDEFGHIJKLMNOPQRSTUVW
+ABCDEFGHIJKLMNOPQRSTUVWX
+ABCDEFGHIJKLMNOPQRSTUVWXY
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+
+4. Write a menu driven program to perform mathematical operations on two numbers. 
+1. Add
+2. Sub
+3. Mul
+4. Div
+5. Exit
+accept the menu option and numbers form user. 
+
+
+# include <iostream>
+using namespace std;
+
+int main() {
+
+  char op;
+  float num1, num2;
+
+  cout << "Enter operator: +, -, *, /: ";
+  cin >> op;
+
+  cout << "Enter First Number: ";
+  cin >> num1;
+  
+  cout << "Enter Second Number: ";
+  cin >> num2;
+
+  switch(op) {
+
+    case '+':
+      cout << num1 << " + " << num2 << " = " << num1 + num2;
+      break;
+
+    case '-':
+      cout << num1 << " - " << num2 << " = " << num1 - num2;
+      break;
+
+    case '*':
+      cout << num1 << " * " << num2 << " = " << num1 * num2;
+      break;
+
+    case '/':
+      cout << num1 << " / " << num2 << " = " << num1 / num2;
+      break;
+
+    default:
+      cout << "Error!";
+      break;
+  }
+
+  return 0;
+}
+
+Output :
+
+Enter operator: +, -, *, /: *
+Enter First Number: 20 
+Enter Second Number: 2
+20 * 2 = 40 
+
+
+5. Generate following pyramid , accept the level from the user as input
+1
+1 2
+1 2 3
+..... 1................N
+ where N is the level accepted as input
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Enter the number : ";
+    cin >> N;
+
+    for (int i = 1; i <= N; i++) {  
+        for (int j = 1; j <= i; j++) {  
+            cout << j << " ";
+        }
+        cout << endl; 
+    }
+
+    return 0;
+}
+
+
+
+Output : 
+ 
+Enter the number: 5
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
